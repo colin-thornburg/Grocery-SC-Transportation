@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: int_delivery_metrics
+    description: This model calculates and summarizes key delivery metrics for internal analysis, providing insights into delivery performance and efficiency.
+    access: public
+    columns:
+      - name: delivery_id
+        description: A unique identifier for each delivery event.
+      - name: delivery_date
+        description: The date on which the delivery took place.
+      - name: delivery_time
+        description: The time taken to complete the delivery, measured in hours.
+      - name: delivery_status
+        description: The current status of the delivery, indicating whether it is completed, pending, or delayed.
+      - name: delivery_cost
+        description: The total cost incurred for the delivery.
+      - name: delivery_distance
+        description: The distance covered during the delivery, measured in kilometers.
+      - name: delivery_rating
+        description: The customer rating for the delivery service, on a scale from 1 to 5.

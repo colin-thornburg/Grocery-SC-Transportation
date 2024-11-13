@@ -8,5 +8,9 @@ SELECT
     CAST(fuel_consumed AS NUMERIC) as fuel_consumed,
     delivery_status,
     customer_id,
-    TIMESTAMP_DIFF(actual_delivery_time, planned_delivery_time, MINUTE) as delivery_delay_minutes
+    TIMESTAMP_DIFF(
+        CAST(CONCAT(delivery_date, ' ', actual_delivery_time) AS TIMESTAMP),
+        CAST(CONCAT(delivery_date, ' ', planned_delivery_time) AS TIMESTAMP),
+        MINUTE
+    ) as delivery_delay_minutes
 FROM {{ ref('raw_delivery_logs') }}

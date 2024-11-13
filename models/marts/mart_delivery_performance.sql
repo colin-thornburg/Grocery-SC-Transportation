@@ -6,6 +6,6 @@ SELECT
     SUM(o.total_amount) as total_revenue,
     CAST(SUM(o.total_amount) - SUM(d.total_fuel_cost) AS NUMERIC) as gross_profit
 FROM {{ ref('int_delivery_metrics') }} d
-LEFT JOIN {{ ref('gordon_ordering_project', 'stg_ordering__orders') }} o
+LEFT JOIN {{ ref('Commercial_Sales_Ordering', 'stg_ordering__orders') }} o
     ON d.delivery_id = o.delivery_id
 GROUP BY d.delivery_date
