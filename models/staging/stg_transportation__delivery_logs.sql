@@ -5,8 +5,8 @@ SELECT
     delivery_date,
     planned_delivery_time,
     actual_delivery_time,
-    fuel_consumed::DECIMAL(10,2) as fuel_consumed,
+    CAST(fuel_consumed AS NUMERIC) as fuel_consumed,
     delivery_status,
     customer_id,
-    DATEDIFF('minute', planned_delivery_time, actual_delivery_time) as delivery_delay_minutes
+    TIMESTAMP_DIFF(actual_delivery_time, planned_delivery_time, MINUTE) as delivery_delay_minutes
 FROM {{ ref('raw_delivery_logs') }}
