@@ -1,0 +1,4 @@
+delivery_id,route_id,driver_id,delivery_date,planned_delivery_time,actual_delivery_time,fuel_consumed,delivery_status,customer_id
+D001,R101,DRV01,2024-01-01,09:00:00,09:15:00,2.5,completed,C001
+D002,R101,DRV01,2024-01-01,10:30:00,10:45:00,1.8,completed,C002
+D003,R102,DRV02,2024-01-01,09:00:00,09:30:00,3.2,delayed,C003
